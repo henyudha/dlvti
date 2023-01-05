@@ -1,23 +1,17 @@
-import './style.css'
-import javascriptLogo from './javascript.svg'
-import { setupCounter } from './counter.js'
+$(document).ready(function() {
 
-document.querySelector('#app').innerHTML = `
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
-      <img src="${javascriptLogo}" class="logo vanilla" alt="JavaScript logo" />
-    </a>
-    <h1>Hello Vite!</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite logo to learn more
-    </p>
-  </div>
-`
+  var userfeed = new Instafeed({
+    get: 'user',
+    userId: '14021425868',
+    limit: 12,
+    resolution: 'standard_resolution',
+    sort:  'most_recent',
+    accessToken: 'IGQVJYdXgxLUQtbG1zVi1lZAXoyQ1o1VEluamVoR3kzaC1xRUJtM3NkWC1fdWlNZAUozVFlfcmRpczYxcDNJbC1oa1VMenUwdVVOcDV3MjRNbTRnUUpiNUYxNDNHczNrcEY1UEo2bTRGb1owUUdGenBlbwZDZD',
+    sortBy: 'most-recent',
+    template: '<div class="gallery"><a href="{{image}}" title="{{caption}}" target="_blank"><img src="{{image}}" alt="{{caption}}" class="img-fluid" /></a></div>',
+  });
+  userFeed.run();
 
-setupCounter(document.querySelector('#counter'))
+
+  
+});
